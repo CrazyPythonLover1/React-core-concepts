@@ -5,7 +5,7 @@ import './App.css';
 
 
 function App() {
-  const Nayok = [ 'Rubel', 'Hero Alam', 'kasem', 'Jasim', 'Manna'];
+  const nayok = [ 'Rubel', 'Hero Alam', 'kasem', 'Jasim', 'Manna','Sakib Khan'];
   const products = [
     {name:'Photoshop', price:'$90.99'},
     {name:'Illustrator', price:'$60.99'},
@@ -16,14 +16,31 @@ function App() {
     <div className="App">
       <header className="App-header">
        <p> I am a React Person</p>
+       <ul>
+          {
+            nayok.map(nayok => <li> {nayok} </li>)
+          }
+       </ul>
+       
+       <ul>
+       <h1> Products List:</h1>
+         {
+           products.map(product => <li> {product.name} </li>)
+         }
+       </ul>
+
+       {
+         products.map(product => <Product product={product}></Product> )
+       }
+
+      
        <Product product={products[0]}>  </Product>
        <Product product={products[1]}>  </Product>
        <Product product={products[2]}>  </Product>
+        {
+          nayok.map(nayok =>  <Person name={nayok} job="Herogiri"></Person>)
+        }
         
-        <Person name={Nayok[0]} job="Herogiri"></Person>
-        <Person name={Nayok[1]} job="Dadagiri"></Person>
-        <Person name={Nayok[3]} job="Kamla"></Person>
-
       
       </header>
     </div>
